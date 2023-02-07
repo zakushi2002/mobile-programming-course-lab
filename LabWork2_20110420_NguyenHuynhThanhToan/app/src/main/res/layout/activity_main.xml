@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" >
+
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="134dp"
+        android:layout_marginTop="145dp"
+        android:editable="false"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:maxWidth="250dp"
+        android:maxHeight="60dp"
+        android:minWidth="80dp"
+        android:minHeight="20dp"
+        android:text="@string/title"
+        android:textAllCaps="true"
+        android:textColor="@color/orange"
+        android:textSize="25dp"
+        android:textStyle="italic"
+        android:typeface="serif"
+        android:background="@color/black"/>
+
+    <EditText
+        android:id="@+id/editTextEnterPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="213dp"
+        android:ems="10"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword"
+        android:password="false"
+        android:textColorHint="@color/teal_200"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/textViewPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="271dp"
+        android:layout_marginBottom="222dp"
+        android:text="@string/password"
+        android:textColor="@color/teal_700"
+        android:textIsSelectable="false"
+        android:textSize="18dp" />
+
+    <EditText
+        android:id="@+id/editTextEnterUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="300dp"
+        android:ems="10"
+        android:hint="@string/hint_user"
+        android:phoneNumber="false"
+        android:textColorHighlight="@color/red"
+        android:textColorHint="@color/teal_200"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/textViewUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="47dp"
+        android:layout_marginTop="274dp"
+        android:text="@string/username"
+        android:textColor="@color/teal_700"
+        android:textIsSelectable="false"
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="122dp"
+        android:text="Login" />
+
+</RelativeLayout>

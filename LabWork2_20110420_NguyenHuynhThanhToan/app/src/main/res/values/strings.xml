@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LabWork2</string>
+    <string name="title">LabWork 2</string>
+    <string name="username">Username: </string>
+    <string name="password">Password: </string>
+    <string name="hint_user">Enter your username</string>
+    <string name="hint_password">Enter your password</string>
+</resources>
