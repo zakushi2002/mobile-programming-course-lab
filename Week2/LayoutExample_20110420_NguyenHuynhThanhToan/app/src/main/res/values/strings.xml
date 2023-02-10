@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LayoutExample</string>
+    <string name="titleUsername">User Name</string>
+    <string name="titlePhoneNo">Phone No</string>
+    <string name="titleEmailId">Email Id</string>
+    <string name="buttonCancel">cancel</string>
+    <string name="buttonSubmit">submit</string>
+</resources>
