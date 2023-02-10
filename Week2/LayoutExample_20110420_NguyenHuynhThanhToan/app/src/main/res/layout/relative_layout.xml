@@ -2,6 +2,81 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp">
+    >
+
+    <EditText
+        android:id="@+id/editTextName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:autofillHints=""
+        android:background="@color/greenSuperLight"
+        android:hint="@string/hintName"
+        android:inputType="text"
+        android:padding="15dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="140dp"
+        android:textColorHint="#616161" />
+
+    <EditText
+        android:id="@+id/editTextAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/editTextName"
+        android:autofillHints=""
+        android:background="@color/greenSuperLight"
+        android:hint="@string/hintAddress"
+        android:inputType="text"
+        android:padding="15dp"
+        android:textColorHint="#616161" />
+
+    <EditText
+        android:id="@+id/editTextSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextName"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="15dp"
+        android:autofillHints=""
+        android:background="@color/greenSuperLight"
+        android:hint="@string/editTextSubject"
+        android:inputType="text"
+        android:padding="15dp"
+        android:textColorHint="#616161" />
+
+    <EditText
+        android:id="@+id/editTextMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextSubject"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="0dp"
+        android:hint="@string/editTextMessage"
+        android:inputType="text"
+        android:textColorHint="#616161"
+        android:autofillHints=""
+        android:background="@color/greenSuperLight"
+        android:paddingBottom="140dp"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:paddingTop="15dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextMessage"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="214dp"
+        android:text="@string/buttonSubmit" />
 </RelativeLayout>

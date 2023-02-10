@@ -5,4 +5,8 @@
     <string name="titleEmailId">Email Id</string>
     <string name="buttonCancel">cancel</string>
     <string name="buttonSubmit">submit</string>
+    <string name="hintName">Name</string>
+    <string name="hintAddress">Address</string>
+    <string name="editTextSubject">Subject</string>
+    <string name="editTextMessage">Message</string>
 </resources>
