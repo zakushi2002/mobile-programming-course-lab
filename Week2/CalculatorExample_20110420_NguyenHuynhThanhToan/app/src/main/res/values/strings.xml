@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CalculatorExample</string>
+    <string name="titleInputA">Input A</string>
+    <string name="titleInputB">Input B</string>
+    <string name="titleResult">A + B</string>
+    <string name="calculate">Calculate A + B</string>
+</resources>

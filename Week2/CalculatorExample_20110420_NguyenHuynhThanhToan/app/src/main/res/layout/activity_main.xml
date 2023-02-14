@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20dp">
+
+    <TextView
+        android:id="@+id/textTitleInputA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/titleInputA"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/textTitleInputB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textTitleInputA"
+        android:layout_alignStart="@+id/textTitleInputA"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="40dp"
+        android:paddingVertical="10dp"
+        android:text="@string/titleInputB"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/textTitleInputResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textTitleInputB"
+        android:layout_alignTop="@+id/outputResult"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:padding="10dp"
+        android:text="@string/titleResult"
+        android:textSize="20sp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/inputTextA"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/textTitleInputA"
+        android:background="@color/purple_500"
+        android:importantForAutofill="no"
+        android:inputType="numberSigned|numberDecimal"
+        android:maxWidth="240dp"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        tools:ignore="LabelFor" />
+
+    <EditText
+        android:id="@+id/inputTextB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/inputTextA"
+        android:layout_alignTop="@+id/textTitleInputB"
+        android:layout_alignEnd="@+id/inputTextA"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:background="@color/purple_500"
+        android:importantForAutofill="no"
+        android:inputType="numberSigned|numberDecimal"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        tools:ignore="LabelFor" />
+
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/inputTextB"
+        android:layout_alignStart="@+id/inputTextB"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/calculate" />
+
+    <EditText
+        android:id="@+id/outputResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonCalculate"
+        android:layout_alignStart="@+id/buttonCalculate"
+        android:layout_alignEnd="@+id/inputTextB"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="0dp"
+        android:autofillHints=""
+        android:background="@color/purple_500"
+        android:editable="false"
+        android:inputType="none"
+        android:padding="10dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        tools:ignore="LabelFor"
+        android:enabled="false"/>
+</RelativeLayout>
