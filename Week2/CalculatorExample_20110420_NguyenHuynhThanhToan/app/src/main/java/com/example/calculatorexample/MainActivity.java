@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
             }
             else {
                 Log.i("Error", "Please enter all the information!!!");
+                Toast.makeText(MainActivity.this,"Please enter all the information!!!", Toast.LENGTH_SHORT).show();
             }
         });
     }
