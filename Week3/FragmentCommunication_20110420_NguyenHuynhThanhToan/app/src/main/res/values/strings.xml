@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">FragmentCommunication</string>
+    <string name="submitButton">submit</string>
+    <string name="toFrag1">To Frag 1</string>
+    <string name="toFrag2">To Frag 2</string>
+    <string name="dataText">Data - Text</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment1">Fragment 1</string>
+    <string name="sendDataToFrag2">Send Data To Frag 2</string>
+    <string name="data_to_frag_2">Data to Frag 2</string>
+    <string name="fragment2">Fragment 2</string>
+    <string name="data_to_frag_1">Data To Frag 1</string>
+    <string name="sendDataToFrag1">Send Data To Frag 1</string>
+</resources>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"/>
+    <TextView
+        android:id="@+id/fragmentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/frameLayout"
+        android:text="@string/dataText"
+        android:textColor="@color/black"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/buttonFragment1"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/toFrag1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginStart="50dp"/>
+    <Button
+        android:id="@+id/buttonFragment2"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/toFrag2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="50dp"/>
+
+</RelativeLayout>
