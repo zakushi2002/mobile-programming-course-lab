@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Fragment-Exercises</string>
+    <string name="fragment_content_1">Login</string>
+    <string name="fragment_content_2">Register</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fragment_main_1">Login Fragment</string>
+    <string name="fragment_main_2">Register Fragment</string>
+</resources>
