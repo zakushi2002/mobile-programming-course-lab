@@ -7,13 +7,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.mozilla.javascript.Context;
 import org.mozilla.javascript.Scriptable;
-import org.mozilla.javascript.ast.Scope;
-
-import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity{
@@ -118,13 +114,15 @@ public class MainActivity extends AppCompatActivity{
                 /*double change = Double.parseDouble(expression.getText().toString()) / 100;
                 result.setText(String.valueOf(change));*/
                 break;
-            case ".":
-                if (process == null) {
-                    process = "0.";
+            /*case ".":
+                if (expression.getText() != "." || expression.getText().length() != 1) {
+                    System.out.println("Test");
+                    process+=".";
                     break;
                 }
-                process+=".";
-                break;
+                process = "0";
+                break;*/
+
             case "=":
                 process = expression.getText().toString();
                 // Thay thế các kí tự để xử lý các con số như phép nhân(x), tính phần trăm => "*", "/100"
@@ -134,25 +132,33 @@ public class MainActivity extends AppCompatActivity{
                 // Xử lý tính toán thông qua javascript - com.faendir.rhino:rhino-android:1.5.2
                 Context rhino = Context.enter();
                 rhino.setOptimizationLevel(-1);
-                String finalResult = "";
+                String endResult = "";
                 try {
                     Scriptable scriptable = rhino.initStandardObjects();
-                    finalResult = rhino.evaluateString(scriptable, process, "javascript", 1, null).toString();
-                    if (finalResult.endsWith(".0")) {
+                    endResult = rhino.evaluateString(scriptable, process, "javascript", 1, null).toString();
+                    System.out.println(endResult);
+
+                    if (endResult.endsWith(".0")) {
                         // Bỏ phần thừa số nguyên ".0"
-                        finalResult = finalResult.replaceAll(".0","");
+                        endResult = endResult.replace(".0","");
+                        if (endResult.equals("-0")) {
+                            endResult = "0";
+                        }
                     }
-                    else if (finalResult.equals("org.mozilla.javascript.Undefined@0")) {
-                        finalResult = "0";
+                    else if (endResult.equals("org.mozilla.javascript.Undefined@0")) {
+                        endResult = "0";
+                    }
+                    else if (endResult.equals("Infinity") || endResult.equals("-Infinity")) {
+                        endResult = "Cannot divide by 0";
                     }
                 }
                 // Trả về lỗi khi xảy ra Exception
                 catch (Exception e) {
                     Log.i("Error", "Error!!!");
                     // Toast.makeText(MainActivity.this,"Error!!!", Toast.LENGTH_SHORT).show();
-                    finalResult = "Error!!!";
+                    endResult = "Error!!!";
                 }
-                result.setText(finalResult);
+                result.setText(endResult);
                 break;
             case "backspace":
                 // 3) Can delete each wrong number.
@@ -162,7 +168,7 @@ public class MainActivity extends AppCompatActivity{
                         checkBrackets = true;
                     }
                     else if (expression.getText().toString().endsWith("(")) {
-                            checkBrackets = false;
+                        checkBrackets = false;
                     }
                     process = process.substring(0, process.length() - 1);
                 }

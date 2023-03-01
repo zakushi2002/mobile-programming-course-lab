@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <Button
         android:id="@+id/button_equal"
         android:layout_width="80dp"
@@ -267,9 +266,11 @@
         android:layout_marginTop="16dp"
         android:gravity="end"
         android:minWidth="335dp"
+        android:maxWidth="335dp"
+        android:maxHeight="60dp"
         android:minHeight="20dp"
         android:textColor="@color/black"
-        android:textSize="45sp"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -278,15 +279,15 @@
         android:id="@+id/textView_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="end"
-        android:minWidth="335dp"
-        android:minHeight="20dp"
         android:layout_marginTop="5dp"
+        android:gravity="end"
+        android:maxWidth="335dp"
+        android:minWidth="335dp"
+        android:maxHeight="60dp"
         android:text="@string/digit_0"
-        android:textSize="45sp"
         android:textColor="@color/black"
+        android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_expression" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
