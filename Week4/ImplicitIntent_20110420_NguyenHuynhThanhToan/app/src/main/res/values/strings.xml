@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Implicit Intent</string>
+    <string name="launch_web_page">Launch Web Page</string>
+</resources>

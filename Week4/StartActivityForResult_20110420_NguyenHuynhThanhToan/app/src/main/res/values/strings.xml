@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">StartActivityForResult</string>
+    <string name="input_1">Input 1</string>
+    <string name="input_2">Input 2</string>
+    <string name="result">Result</string>
+    <string name="open_activity_2">Open Activity 2</string>
+    <string name="show_numbers">Numbers:</string>
+    <string name="add">add</string>
+    <string name="subtract">subtract</string>
+</resources>
