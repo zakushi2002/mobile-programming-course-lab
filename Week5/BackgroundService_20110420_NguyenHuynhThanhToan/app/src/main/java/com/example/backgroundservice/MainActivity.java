@@ -17,18 +17,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.button_start_service).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startService(view);
-            }
-        });
-        findViewById(R.id.button_stop_service).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                stopService(view);
-            }
-        });
+        start = findViewById(R.id.button_start_service);
+        start.setOnClickListener(this::startService);
+        stop = findViewById(R.id.button_stop_service);
+        stop.setOnClickListener(this::stopService);
     }
 
     public void startService(View view) {
