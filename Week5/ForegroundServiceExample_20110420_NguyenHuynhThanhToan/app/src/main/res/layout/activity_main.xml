@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
+
     tools:context=".MainActivity">
 
-    <EditText
+    <!--<EditText
         android:id="@+id/edit_data_intent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,19 +16,80 @@
         android:hint="@string/data"
         android:inputType="text"
         android:minHeight="48dp"
-        tools:ignore="VisualLintTextFieldSize" />
-    <Button
-        android:id="@+id/button_start_service"
+        tools:ignore="VisualLintTextFieldSize" />-->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/start_service"
-        tools:ignore="VisualLintButtonSize" />
-    <Button
-        android:id="@+id/button_stop_service"
+        android:padding="16dp"
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/button_start_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/start_service"
+            tools:ignore="VisualLintButtonSize" />
+        <Button
+            android:id="@+id/button_stop_service"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/stop_service"
+            tools:ignore="VisualLintButtonSize" />
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/media_player_bottom"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/stop_service"
-        tools:ignore="VisualLintButtonSize" />
-</LinearLayout>
+        android:layout_height="64dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/darker_gray"
+        android:visibility="gone"
+        android:padding="10dp">
+        <ImageView
+            android:id="@+id/img_song"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="centerCrop"
+            android:layout_centerVertical="true"/>
+        <LinearLayout
+            android:id="@+id/content_song"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/img_song"
+            android:layout_toStartOf="@id/img_play_pause">
+            <TextView
+                android:id="@+id/title_song"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="14sp"/>
+            <TextView
+                android:id="@+id/singer_of_song"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/darker_gray"
+                android:textSize="13sp"/>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/img_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:layout_centerVertical="true"/>
+        <ImageView
+            android:id="@+id/img_play_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@id/img_close"
+            android:src="@android:drawable/ic_media_pause"
+            android:layout_marginEnd="30dp"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+</RelativeLayout>
