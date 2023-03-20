@@ -10,15 +10,14 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText editData;
-    private Button buttonStart, buttonStop;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        editData = findViewById(R.id.edit_data_intent);
-        buttonStart = findViewById(R.id.button_start_service);
-        buttonStop = findViewById(R.id.button_stop_service);
+        // editData = findViewById(R.id.edit_data_intent);
+        // private EditText editData;
+        Button buttonStart = findViewById(R.id.button_start_service);
+        Button buttonStop = findViewById(R.id.button_stop_service);
 
         buttonStart.setOnClickListener(v -> clickStartService());
         buttonStop.setOnClickListener(v -> clickStopService());

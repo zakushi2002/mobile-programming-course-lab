@@ -5,6 +5,7 @@ import static com.example.foregroundservice.MyApp.CHANNEL_ID;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,10 +16,16 @@ import android.util.AndroidException;
 import android.util.Log;
 import android.widget.RemoteViews;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 
 public class MyService extends Service {
-    private MediaPlayer mediaPlayer = null;
+    private MediaPlayer mediaPlayer;
+    private static final int ACTION_PAUSE = 1;
+    private static final int ACTION_RESUME = 2;
+    private static final int ACTION_CLEAR = 3;
+    private boolean isPlaying;
+    private Song songGlobal;
     public MyService() {
     }
 
@@ -35,16 +42,21 @@ public class MyService extends Service {
     }
 
     @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
+    public int onStartCommand(@NonNull Intent intent, int flags, int startId) {
         // String receivedData = intent.getStringExtra("key_data");
         Bundle bundle = intent.getExtras();
         if (bundle != null) {
             Song song = (Song) bundle.get("object_song");
             if (song != null) {
+                songGlobal = song;
                 startMusic(song);
                 sendNotification(song);
             }
         }
+
+        int actionMusic = intent.getIntExtra("action_music_service", 0);
+        handleActionMusic(actionMusic);
+
         // sendNotification(receivedData);
         return START_NOT_STICKY;
     }
@@ -54,6 +66,36 @@ public class MyService extends Service {
             mediaPlayer = MediaPlayer.create(getApplicationContext(), song.getResource());
         }
         mediaPlayer.start();
+        isPlaying = true;
+    }
+
+    private void handleActionMusic(int action) {
+        switch (action) {
+            case ACTION_PAUSE:
+                pauseMusic();
+                break;
+            case ACTION_RESUME:
+                resumeMusic();
+                break;
+            case ACTION_CLEAR:
+                stopSelf();
+                break;
+        }
+    }
+
+    private void pauseMusic() {
+        if (mediaPlayer != null && isPlaying) {
+            mediaPlayer.pause();
+            isPlaying = false;
+            sendNotification(songGlobal);
+        }
+    }
+    private void resumeMusic() {
+        if (mediaPlayer != null && !isPlaying) {
+            mediaPlayer.start();
+            isPlaying = true;
+            sendNotification(songGlobal);
+        }
     }
 
     // Input Data - String - 1) Project 1: Foreground service sample
@@ -63,14 +105,14 @@ public class MyService extends Service {
 
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle("Foreground Service Example")
-                .setContentText(receivedData).setSmallIcon(R.drawable.baseline_catching_pokemon_24)
+                .setContentText(receivedData).setSmallIcon(R.drawable.music_notification)
                 .setContentIntent(pendingIntent)
                 .build();
 
         startForeground(1, notification);
     }
     // Input Data - Song - 2) Project 2: Media player (foreground service) 
-    private void sendNotification(Song song) {
+    private void sendNotification(@NonNull Song song) {
         Intent intent = new Intent(this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 , intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
@@ -79,7 +121,18 @@ public class MyService extends Service {
         remoteViews.setTextViewText(R.id.title_song, song.getTitle());
         remoteViews.setTextViewText(R.id.singer_of_song, song.getSinger());
         remoteViews.setImageViewBitmap(R.id.img_song, bitmap);
-        remoteViews.setImageViewResource(R.id.img_play_pause, android.R.drawable.ic_media_pause);
+
+        //remoteViews.setImageViewResource(R.id.img_play_pause, android.R.drawable.ic_media_pause);
+
+        if (isPlaying) {
+            remoteViews.setOnClickPendingIntent(R.id.img_play_pause, getPendingIntent(this, ACTION_PAUSE));
+            remoteViews.setImageViewResource(R.id.img_play_pause, android.R.drawable.ic_media_pause);
+        }
+        else {
+            remoteViews.setOnClickPendingIntent(R.id.img_play_pause, getPendingIntent(this, ACTION_RESUME));
+            remoteViews.setImageViewResource(R.id.img_play_pause, android.R.drawable.ic_media_play);
+        }
+        remoteViews.setOnClickPendingIntent(R.id.img_close, getPendingIntent(this, ACTION_CLEAR));
 
         Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setContentTitle("Foreground Service Example")
@@ -90,6 +143,12 @@ public class MyService extends Service {
                 .build();
 
         startForeground(1, notification);
+    }
+
+    private PendingIntent getPendingIntent(@NonNull Context context, int action) {
+        Intent intent = new Intent(this, MyReceiver.class);
+        intent.putExtra("action_music", action);
+        return PendingIntent.getBroadcast(context.getApplicationContext(), action, intent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
     @Override
