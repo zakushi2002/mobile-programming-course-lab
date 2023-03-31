@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     // After API 23 the permission request for accessing external storage is changed
     // Before API 23 permission request is asked by the user during installation of app
     // After API 23 permission request is asked at runtime
-    private int EXTERNAL_STORAGE_PERMISSION_CODE = 23;
+    private int EXTERNAL_STORAGE_PERMISSION_CODE = 27;
     EditText editText;
 
     @Override
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void savePublicly(View view) {
         // Requesting Permission to access External Storage
-        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE},
                 EXTERNAL_STORAGE_PERMISSION_CODE);
         String editTextData = editText.getText().toString();
 
