@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_popular_song" android:title="@string/popular_song" android:icon="@drawable/user_1_svgrepo_com"/>
+    <item android:id="@+id/menu_personal" android:title="@string/personal" android:icon="@drawable/music_svgrepo_com"/>
+    <item android:id="@+id/menu_feedback" android:title="@string/feedback" android:icon="@drawable/flag_svgrepo_com"/>
+</menu>

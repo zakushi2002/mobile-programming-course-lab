@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="10dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_song"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/music_img"/>
+    <LinearLayout android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:layout_centerVertical="true"
+                  android:layout_toEndOf="@+id/img_song"
+                  android:layout_marginStart="10dp">
+        <TextView
+                android:id="@+id/title_song"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="Khuat Loi"
+                android:textColor="@color/black"/>
+        <TextView
+                android:id="@+id/name_singer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="H-Kray"/>
+    </LinearLayout>
+</RelativeLayout>
