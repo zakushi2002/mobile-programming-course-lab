@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "387806811677",
+    "firebase_url": "https://user-demo-android-studio-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "user-demo-android-studio",
+    "storage_bucket": "user-demo-android-studio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387806811677:android:55044602b88008749758f4",
+        "android_client_info": {
+          "package_name": "vn.mobile.programming.uploadretrievefirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "387806811677-t6mcl0n27la1k1bttcbo3c12mv69ma35.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBs7RZyWoCoSmwx12rnhV5hXZXgNmJBUE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "387806811677-t6mcl0n27la1k1bttcbo3c12mv69ma35.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
