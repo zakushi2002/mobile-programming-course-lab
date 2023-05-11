@@ -1,21 +1,43 @@
 package com.hcmute.it.k20.app.musicplayer.entity;
 
-public class Song {
-    private String title;
-    private String singer;
-    private Integer image;
-    private Integer resource;
+import java.io.Serializable;
 
-    public Song(String title, String singer, Integer image, Integer resource) {
-        this.title = title;
-        this.singer = singer;
-        this.image = image;
-        this.resource = resource;
+public class Song implements Serializable {
+    private Long id;
+    private String title;
+    private String artist;
+    private String image;
+    private String storageUrl;
+
+    public Song() {
     }
 
-    public Song(String title, String singer, Integer image) {
+    public Song(String title, String artist, String image, String storageUrl) {
         this.title = title;
-        this.singer = singer;
+        this.artist = artist;
+        this.image = image;
+        this.storageUrl = storageUrl;
+    }
+
+    public Song(Long id, String title, String artist, String image, String storageUrl) {
+        this.id = id;
+        this.title = title;
+        this.artist = artist;
+        this.image = image;
+        this.storageUrl = storageUrl;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Song(String title, String artist, String image) {
+        this.title = title;
+        this.artist = artist;
         this.image = image;
     }
 
@@ -27,27 +49,27 @@ public class Song {
         this.title = title;
     }
 
-    public String getSinger() {
-        return singer;
+    public String getArtist() {
+        return artist;
     }
 
-    public void setSinger(String singer) {
-        this.singer = singer;
+    public void setArtist(String artist) {
+        this.artist = artist;
     }
 
-    public Integer getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(Integer image) {
+    public void setImage(String image) {
         this.image = image;
     }
 
-    public Integer getResource() {
-        return resource;
+    public String getStorageUrl() {
+        return storageUrl;
     }
 
-    public void setResource(Integer resource) {
-        this.resource = resource;
+    public void setStorageUrl(String storageUrl) {
+        this.storageUrl = storageUrl;
     }
 }

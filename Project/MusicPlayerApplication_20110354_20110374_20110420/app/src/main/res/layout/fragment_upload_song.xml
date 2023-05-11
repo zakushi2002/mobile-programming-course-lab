@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".activity.UploadSongActivity">
+
+    <TextView
+        android:id="@+id/title_upload_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:text="Upload Song" />
+
+    <LinearLayout
+        android:id="@+id/linear_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_upload_fragment"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title:"
+            android:textSize="16sp"
+            android:layout_weight="8"/>
+
+        <EditText
+            android:id="@+id/title_song_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title Song"
+            android:textSize="16sp"
+            android:layout_weight="2"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_artist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_title"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="8"
+            android:text="Artist:"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/artist_song_upload"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:hint="Artist Song"
+            android:textSize="16sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_artist"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <Button
+            android:id="@+id/button_upload_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Upload image"
+            android:layout_weight="6"/>
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_weight="4"
+            android:src="@drawable/imgitem"
+            android:layout_marginStart="10dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear_song"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_image"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <Button
+            android:id="@+id/button_choose_mp3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Choose song"
+            android:layout_weight="6"/>
+
+        <TextView
+            android:id="@+id/name_mp3_file"
+            android:paddingStart="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:text=".mp3"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_upload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linear_song"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="Upload" />
+</RelativeLayout>
