@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">TranslationAppML</string>
+    <string name="enter_text_here">Enter text here</string>
+    <string name="english">English</string>
+    <string name="vietnamese">Vietnamese</string>
+    <string name="arrow">arrow</string>
+    <string name="history">History</string>
+    <string name="clear_text">Clear</string>
+    <string name="capture">Capture</string>
+    <string name="translate">Translate</string>
+    <string name="action_search">Search</string>
+    <string name="home">Home</string>
+</resources>

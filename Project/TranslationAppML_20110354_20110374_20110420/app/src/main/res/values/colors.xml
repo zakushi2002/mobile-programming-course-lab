@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="bgMain">#373E80</color>
+    <color name="tv_color">#666161</color>
+    <color name="bg_arrow_button">#142D85</color>
+    <color name="translate_bar">#537EE6</color>
+</resources>

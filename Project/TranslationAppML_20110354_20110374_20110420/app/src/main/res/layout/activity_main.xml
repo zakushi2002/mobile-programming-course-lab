@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgMain"
+    android:padding="16dp"
+    tools:context=".activity.MainActivity">
+
+    <EditText
+        android:id="@+id/et_input"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:autofillHints="@string/enter_text_here"
+        android:background="@drawable/round_text_view"
+        android:gravity="top"
+        android:hint="@string/enter_text_here"
+        android:inputType="text|textMultiLine"
+        android:maxHeight="180dp"
+        android:padding="10dp"
+        android:textColor="@color/tv_color"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/selector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_input"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/round_bar"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_source_language"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/translate_bar"
+            android:text="@string/english" />
+
+        <ImageButton
+            android:id="@+id/arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/arrow"
+            android:padding="10dp"
+            android:src="@drawable/baseline_arrow_forward_24"
+            app:backgroundTint="@color/translate_bar" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_target_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/translate_bar"
+            android:text="@string/vietnamese" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_output"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_below="@+id/selector"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/round_text_view"
+        android:gravity="top"
+        android:inputType="text|textMultiLine"
+        android:maxHeight="180dp"
+        android:padding="10dp"
+        android:textColor="@color/tv_color"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:scrollbars = "vertical" />
+
+    <LinearLayout
+        android:id="@+id/button_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/tv_output"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_button"
+            android:text="@string/clear_text"
+            android:textSize="18sp"
+            app:backgroundTint="@null" />
+
+        <ImageButton
+            android:id="@+id/btn_capture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_button"
+            android:contentDescription="@string/capture"
+            android:src="@drawable/camera_white_foreground" />
+
+        <Button
+            android:id="@+id/btn_history"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_button"
+            android:text="@string/history"
+            android:textSize="18sp"
+            app:backgroundTint="@null" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_translate"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/round_button"
+        android:text="@string/translate"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:backgroundTint="@null" />
+</RelativeLayout>

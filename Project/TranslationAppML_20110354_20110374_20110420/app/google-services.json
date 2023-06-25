@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "965198568437",
+    "project_id": "translation-app-ml",
+    "storage_bucket": "translation-app-ml.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965198568437:android:5ef770bc541c5df240debc",
+        "android_client_info": {
+          "package_name": "com.mobile.machinelearning.translationapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "965198568437-ljqtq7hjekj8442mvmsm6iulgqj6lp0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHguBGSDS5_pr8RzUlbU-FoOg4KM4gwqI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "965198568437-ljqtq7hjekj8442mvmsm6iulgqj6lp0k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
